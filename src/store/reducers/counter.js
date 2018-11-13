@@ -8,21 +8,26 @@ const initialState =  {
 const reducer = (state = initialState, action) => {
     switch( action.type ) {
         case INCREMENT:
-            const nextCounter = state.counter;
-            return {
-                ...state,
-                counter: nextCounter +1
-            }
+            return updateObject(
+                state,
+                {
+                    counter: state.counter +1
+                }
+            )
         case DECREMENT:
-            return {
-                ...state,
-                counter: state.counter - 1
-            }
+            return updateObject(
+                state,
+                {
+                    counter: state.counter - 1
+                }
+            )
         case ADD:
-            return {
-                ...state,
-                counter: state.counter + action.payload
-            }
+            return updateObject(
+                state,
+                {
+                    counter: state.counter + action.payload
+                }
+            )
         case SUBSTRACT:
             return updateObject(
                 state,
